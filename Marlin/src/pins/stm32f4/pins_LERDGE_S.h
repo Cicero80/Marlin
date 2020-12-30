@@ -18,7 +18,7 @@
  */
 #pragma once
 
-#if !defined(STM32F4) && !defined(STM32F4xx)
+#if NOT_TARGET(STM32F4, STM32F4xx)
   #error "Oops! Select an STM32F4 board in 'Tools > Board.'"
 #elif HOTENDS > 2 || E_STEPPERS > 2
   #error "LERDGE S supports up to 2 hotends / E-steppers."
@@ -156,6 +156,7 @@
 // SD support
 //
 #define SDIO_SUPPORT
+#define SDIO_CLOCK                       4800000
 
 #define SCK_PIN                             PC12  //confirmed working
 #define MISO_PIN                            PC8   //confirmed working
